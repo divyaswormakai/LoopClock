@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LoopClock</string>
+    <string name="tab_text_1">Clock</string>
+    <string name="tab_text_2">Stopwatch</string>
+    <string name="tab_text_3">Loop Clock</string>
+    <string name="hint_clock">Clock Here</string>
+</resources>
