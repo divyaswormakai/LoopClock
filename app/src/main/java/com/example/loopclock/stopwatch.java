@@ -42,11 +42,11 @@ public class stopwatch extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View stopWatch = inflater.inflate(R.layout.fragment_stopwatch, container, false);
-        timer = (TextView) stopWatch.findViewById(R.id.timer);
-        start = (Button) stopWatch.findViewById(R.id.start);
-        lap = (Button) stopWatch.findViewById(R.id.lap);
-        scroller = (ScrollView) stopWatch.findViewById(R.id.scroll);
-        ll = (LinearLayout) stopWatch.findViewById(R.id.ll);
+        timer = stopWatch.findViewById(R.id.timer);
+        start = stopWatch.findViewById(R.id.start);
+        lap = stopWatch.findViewById(R.id.lap);
+        scroller = stopWatch.findViewById(R.id.scroll);
+        ll = stopWatch.findViewById(R.id.ll);
 
         pattern = hr+"0 : "+min+"0 : 0"+sec;
         timer.setText(pattern);

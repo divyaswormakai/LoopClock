@@ -28,8 +28,8 @@ public class clock extends Fragment {
         String currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
 
         View clc =  inflater.inflate(R.layout.fragment_clock, container, false);
-        timetxt = (TextView) clc.findViewById(R.id.time);
-        title = (TextView) clc.findViewById(R.id.clocktext);
+        timetxt = clc.findViewById(R.id.time);
+        title = clc.findViewById(R.id.clocktext);
         title.setText("Your current time is");
         timetxt.setText(currentTime);
         //to update the time every second
