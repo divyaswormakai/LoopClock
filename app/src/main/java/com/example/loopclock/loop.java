@@ -48,7 +48,7 @@ public class loop extends Fragment {
             }
         });
 
-        mPlayer = MediaPlayer.create(getContext(),R.raw.sample);
+        mPlayer = MediaPlayer.create(getContext(),R.raw.sound);
         return loopView;
     }
 
