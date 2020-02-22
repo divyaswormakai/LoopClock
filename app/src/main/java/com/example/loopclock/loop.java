@@ -4,6 +4,7 @@ package com.example.loopclock;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -56,20 +58,28 @@ public class loop extends Fragment {
         String temp = startBtn.getText().toString().trim();
         if(temp =="Stop"){
             startBtn.setText("Start");
+            startBtn.setBackgroundResource(R.drawable.green_rounded_color);
 
             StopLoop();
         }
         else{
-            startBtn.setText("Stop");
+            if(intervalTxt.getText().length()>0 && countTxt.getText().length()>0) {
+                interval = Integer.valueOf(intervalTxt.getText().toString());
+                loopCount = Integer.valueOf(countTxt.getText().toString()) - 1;
+                counter = interval;
 
-            interval = Integer.valueOf(intervalTxt.getText().toString());
-            loopCount = Integer.valueOf(countTxt.getText().toString())-1;
-            counter = interval;
+                startBtn.setText("Stop");
+                startBtn.setBackgroundResource(R.drawable.rounded_color);
 
-            looprem.setText(String.valueOf(loopCount));
-            timerem.setText(String.valueOf(counter));
+                looprem.setText(String.valueOf(loopCount));
+                timerem.setText(String.valueOf(counter));
 
-            StartTimer();
+                StartTimer();
+            }
+            else{
+                Toast.makeText(getContext(),"Input the values for both of the input fields",Toast.LENGTH_SHORT).show();
+
+            }
         }
     }
 
